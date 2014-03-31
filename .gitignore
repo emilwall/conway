@@ -1,0 +1,9 @@
+[Bb]in/
+[Oo]bj/
+
+# TypeScript generated files
+**.js.map
+
+# User-specific files
+*.suo
+*.user
