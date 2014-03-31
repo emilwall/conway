@@ -17,7 +17,6 @@
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="index.html" />
     <Content Include="jasmine\jasmine-html.js" />
     <Content Include="jasmine\jasmine.css" />
     <Content Include="jasmine\jasmine.d.ts" />
