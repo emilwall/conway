@@ -17,6 +17,9 @@
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="gol.d.ts" />
+    <Content Include="gol.js" />
+    <Content Include="jasmine\boot.js" />
     <Content Include="jasmine\jasmine-html.js" />
     <Content Include="jasmine\jasmine.css" />
     <Content Include="jasmine\jasmine.d.ts" />
@@ -24,7 +27,12 @@
     <Content Include="jasmine\jasmine_favicon.png" />
     <Content Include="jasmine\Runner.html" />
     <Content Include="tests\js-tests.js" />
+    <Content Include="tests\ts-test.js" />
+    <TypeScriptCompile Include="gol.ts" />
     <TypeScriptCompile Include="tests\ts-test.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="README.md" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

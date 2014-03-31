@@ -1,4 +1,5 @@
-Conway's Gane if life
+Conway's Game of life
 ======
 
-Think of this like a boilerplate for learning jasmine with js or ts
+Originally a boilerplate project for learning Jasmine with JavaScript or
+TypeScript, through a TDD exercise of Game of Life (GOL).
