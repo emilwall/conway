@@ -36,10 +36,21 @@ describe('Game of Life', () => {
     });
 
     describe('Grid', () => {
-        var grid;
+        var grid : Grid;
 
         beforeEach(function () {
             grid = gol.grid;
+        });
+
+        it('has an initialize method called init', () => {
+            expect(typeof grid.init).toBe('function');
+        });
+
+        describe('init', () => {
+            it('creates the specified living cells', () => {
+                grid.init([{ x: 0, y: 0 }]);
+                expect(grid.cells[0, 0].isDead).toBeFalsy();
+            });
         });
 
         it('has a cell of type Cell', () => {
@@ -47,7 +58,7 @@ describe('Game of Life', () => {
         });
 
         describe('Cell', () => {
-            var cell;
+            var cell : Cell;
 
             beforeEach(() => {
                 cell = new Cell();

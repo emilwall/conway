@@ -13,6 +13,9 @@ var GOL = (function () {
 var Grid = (function () {
     function Grid() {
         this.cells = [new Cell()];
+        this.init = function (alivePositions) {
+            this.cells[0].isDead = false;
+        };
     }
     return Grid;
 })();

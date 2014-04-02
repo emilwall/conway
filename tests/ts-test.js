@@ -41,6 +41,17 @@ describe('Game of Life', function () {
             grid = gol.grid;
         });
 
+        it('has an initialize method called init', function () {
+            expect(typeof grid.init).toBe('function');
+        });
+
+        describe('init', function () {
+            it('creates the specified living cells', function () {
+                grid.init([{ x: 0, y: 0 }]);
+                expect(grid.cells[0, 0].isDead).toBeFalsy();
+            });
+        });
+
         it('has a cell of type Cell', function () {
             expect(grid.cells[0]).toEqual(new Cell());
         });

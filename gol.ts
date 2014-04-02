@@ -9,6 +9,9 @@ class GOL {
 
 class Grid {
     cells = [new Cell()];
+    init = function (alivePositions) {
+        this.cells[0].isDead = false;
+    };
 };
 
 class Cell {
