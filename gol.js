@@ -1,10 +1,17 @@
 ﻿/// <reference path="gol.d.ts"/>
 var GOL = (function () {
     function GOL() {
-        this.grid = {};
-        this.cells = [new Cell()];
+        this.grid = new Grid();
     }
     return GOL;
+})();
+;
+
+var Grid = (function () {
+    function Grid() {
+        this.cells = [new Cell()];
+    }
+    return Grid;
 })();
 ;
 

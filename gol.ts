@@ -1,7 +1,10 @@
 ﻿/// <reference path="gol.d.ts"/>
 
 class GOL {
-    grid = {};
+    grid = new Grid();
+};
+
+class Grid {
     cells = [new Cell()];
 };
 

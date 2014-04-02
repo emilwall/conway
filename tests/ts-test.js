@@ -20,19 +20,27 @@ describe('Game of Life', function () {
         expect(gol.grid).toBeDefined();
     });
 
-    it('has a cell of type Cell', function () {
-        expect(gol.cells[0]).toEqual(new Cell());
-    });
-
-    describe('Cell', function () {
-        var cell;
+    describe('Grid', function () {
+        var grid;
 
         beforeEach(function () {
-            cell = new Cell();
+            grid = gol.grid;
         });
 
-        it('is dead by default', function () {
-            expect(cell.isDead).toBe(true);
+        it('has a cell of type Cell', function () {
+            expect(grid.cells[0]).toEqual(new Cell());
+        });
+
+        describe('Cell', function () {
+            var cell;
+
+            beforeEach(function () {
+                cell = new Cell();
+            });
+
+            it('is dead by default', function () {
+                expect(cell.isDead).toBe(true);
+            });
         });
     });
 });
