@@ -1,41 +1,36 @@
 module.exports = function (grunt) {
-    grunt.loadNpmTasks("grunt-ts");
-    grunt.loadNpmTasks('grunt-contrib-jasmine');
+	grunt.loadNpmTasks('grunt-ts');
+	grunt.loadNpmTasks('grunt-contrib-jasmine');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.initConfig({
-	    ts: {
-	        // A specific target
-	        build: {
-	            // The source TypeScript files, http://gruntjs.com/configuring-tasks#files
-	            src: ["tests/**/*.ts", "./*.ts"],
-	            // If specified, the generate JavaScript files are placed here. Only works if out is not specified
-	            outDir: '.',
-	            // If specified, watches this directory for changes, and re-runs the current target
-	            watch: '.',                     
-	            // Use to override the default options, http://gruntjs.com/configuring-tasks#options
-	            options: {     
-	                // 'es3' (default) | 'es5'
-	                target: 'es3',
-	                // 'amd' (default) | 'commonjs'    
-	                module: 'commonjs',
-	                // true (default) | false
-	                sourceMap: true,
-	                // true | false (default)
-	                declaration: false,
-	                // true (default) | false
-	                removeComments: true
-	            },
-	        },
-	    },
-	    jasmine: {
+	grunt.initConfig({
+		ts: {
+			build: {
+				src: ['tests/**/*.ts', './*.ts'],
+				options: {
+					target: 'es3',
+					module: 'commonjs',
+					sourceMap: true,
+					declaration: false,
+					removeComments: true
+				},
+			},
+		},
+		jasmine: {
 			pivotal: {
 				src: '*.js',
 				options: {
-					specs: 'tests/**/*.js'
-				}
-			}
+					specs: 'tests/**/*.js',
+				},
+			},
+		},
+		watch: {
+			pivotal : {
+				files: ['tests/**/*.ts', './*.ts', '*.js', 'tests/**/*.js'],
+				tasks: ['ts:build', 'jasmine:pivotal']
+			},
 		},
 	});
 
-	grunt.registerTask("default", ["ts:build"]);
+	grunt.registerTask("default", ["watch"]);
 }
