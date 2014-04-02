@@ -1,4 +1,4 @@
-﻿/// <reference path="gol.d.ts"/>
+/// <reference path="gol.d.ts"/>
 var GOL = (function () {
     function GOL() {
         this.grid = new Grid();

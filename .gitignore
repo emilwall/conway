@@ -9,3 +9,6 @@
 *.user
 _ReSharper.CGOL/
 .DS_Store
+.tscache
+.baseDir.ts
+.baseDir.js

@@ -1,10 +1,9 @@
-﻿/// <reference path="../jasmine/jasmine.d.ts"/>
-describe('Jasmine', function () {
+﻿describe('Jasmine', function () {
     it('Should work with typescript', function () {
         expect(true).toBeTruthy();
     });
 
-    it('is defined in namespace/class GOL', function () {
+    it('can access namespace GOL', function () {
         expect(GOL).toBeDefined();
     });
 });

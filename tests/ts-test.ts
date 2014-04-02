@@ -5,7 +5,7 @@ describe('Jasmine', () => {
         expect(true).toBeTruthy();
     });
 
-    it('is defined in namespace/class GOL', () => {
+    it('can access namespace GOL', () => {
         expect(GOL).toBeDefined();
     });
 });
