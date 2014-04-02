@@ -17,6 +17,10 @@ describe('Game of Life', () => {
         gol = new GOL();
     });
 
+    it('has a grid of cells', () => {
+        expect(gol.grid).toBeDefined();
+    });
+
     it('has a cell of type Cell', () => {
         expect(gol.cells[0]).toEqual(new Cell());
     });
