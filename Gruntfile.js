@@ -1,7 +1,6 @@
 module.exports = function (grunt) {
-
-    // load the task 
     grunt.loadNpmTasks("grunt-ts");
+    grunt.loadNpmTasks('grunt-contrib-jasmine');
 
     grunt.initConfig({
 	    ts: {
@@ -28,6 +27,14 @@ module.exports = function (grunt) {
 	            },
 	        },
 	    },
+	    jasmine: {
+			pivotal: {
+				src: '*.js',
+				options: {
+					specs: 'tests/**/*.js'
+				}
+			}
+		},
 	});
 
 	grunt.registerTask("default", ["ts:build"]);

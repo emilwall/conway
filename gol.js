@@ -1,3 +1,3 @@
-﻿var GOL = function () {
+var GOL = function () {
 };
 //# sourceMappingURL=gol.js.map
