@@ -1,0 +1,27 @@
+{
+  "name": "conway",
+  "version": "0.0.0",
+  "description": "CGOL in TypeScript with Jasmine",
+  "main": ".baseDir.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "grunt": "~0.4.4",
+    "grunt-ts": "~1.10.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pardahlman/conway.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pardahlman/conway/issues"
+  },
+  "homepage": "https://github.com/pardahlman/conway"
+}

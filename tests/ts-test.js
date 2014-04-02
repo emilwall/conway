@@ -1,5 +1,4 @@
-﻿/// <reference path="../jasmine/jasmine.d.ts"/>
-describe('Jasmine', function () {
+﻿describe('Jasmine', function () {
     it('Should work with typescript', function () {
         expect(true).toBeTruthy();
     });
