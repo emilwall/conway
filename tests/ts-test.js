@@ -3,7 +3,7 @@
         expect(true).toBeTruthy();
     });
 
-    it('is defined in namespace GOL', function () {
+    it('can access namespace GOL', function () {
         expect(GOL).toBeDefined();
     });
 });

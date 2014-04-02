@@ -18,7 +18,7 @@ module.exports = function (grunt) {
 		},
 		jasmine: {
 			pivotal: {
-				src: '*.js',
+				src: ['*.js', '!Gruntfile.js'],
 				options: {
 					specs: 'tests/**/*.js',
 				},
