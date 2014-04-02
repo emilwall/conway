@@ -2,6 +2,8 @@
 var GOL = (function () {
     function GOL() {
         this.grid = new Grid();
+        this.tick = function () {
+        };
     }
     return GOL;
 })();

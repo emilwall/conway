@@ -2,6 +2,7 @@
 
 class GOL {
     grid = new Grid();
+    tick = function () { };
 };
 
 class Grid {

@@ -21,6 +21,10 @@ describe('Game of Life', () => {
         expect(gol.grid).toBeDefined();
     });
 
+    it('can evolve one generation', () => {
+        expect(typeof gol.tick).toBe('function');
+    });
+
     describe('Grid', () => {
         var grid;
 
