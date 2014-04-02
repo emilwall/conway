@@ -2,6 +2,9 @@
 
 class GOL {
 
-    cells = [""];
+    cells = [new Cell()];
 };
 
+class Cell {
+    isDead = true;
+};

@@ -16,8 +16,21 @@ describe('Game of Life', function () {
         gol = new GOL();
     });
 
-    it('has a cell', function () {
-        expect(gol.cells[0]).toBeDefined();
+    it('has a cell of type Cell', function () {
+        expect(gol.cells[0]).toEqual(new Cell());
+    });
+
+    describe('Cell', function () {
+        var cell;
+
+        beforeEach(function () {
+            cell = new Cell();
+        });
+
+        it('is dead by default', function () {
+            expect(cell.isDead).toBe(true);
+        });
     });
 });
+// TODO Custom matcher: toBeOfType
 //# sourceMappingURL=ts-test.js.map
