@@ -11,7 +11,7 @@ describe('Jasmine', () => {
 });
 
 describe('Game of Life', () => {
-    var gol;
+    var gol : GOL;
 
     beforeEach(() => {
         gol = new GOL();
@@ -23,6 +23,16 @@ describe('Game of Life', () => {
 
     it('can evolve one generation', () => {
         expect(typeof gol.tick).toBe('function');
+    });
+
+    describe('tick method', () => {
+        it('kills cells with fewer than two live neighbours', () => {
+            gol.grid.cells[0].isDead = false;
+
+            gol.tick();
+
+            expect(gol.grid.cells[0].isDead).toBeTruthy();
+        });
     });
 
     describe('Grid', () => {
@@ -44,7 +54,7 @@ describe('Game of Life', () => {
             });
 
             it('is dead by default', () => {
-                expect(cell.isDead).toBe(true);
+                expect(cell.isDead).toBeTruthy();
             });
         });
     });

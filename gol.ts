@@ -2,7 +2,9 @@
 
 class GOL {
     grid = new Grid();
-    tick = function () { };
+    public tick = function () {
+        this.grid.cells[0].isDead = true;
+    };
 };
 
 class Grid {

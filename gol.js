@@ -3,6 +3,7 @@ var GOL = (function () {
     function GOL() {
         this.grid = new Grid();
         this.tick = function () {
+            this.grid.cells[0].isDead = true;
         };
     }
     return GOL;

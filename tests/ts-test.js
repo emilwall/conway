@@ -24,6 +24,16 @@ describe('Game of Life', function () {
         expect(typeof gol.tick).toBe('function');
     });
 
+    describe('tick method', function () {
+        it('kills cells with fewer than two live neighbours', function () {
+            gol.grid.cells[0].isDead = false;
+
+            gol.tick();
+
+            expect(gol.grid.cells[0].isDead).toBeTruthy();
+        });
+    });
+
     describe('Grid', function () {
         var grid;
 
@@ -43,7 +53,7 @@ describe('Game of Life', function () {
             });
 
             it('is dead by default', function () {
-                expect(cell.isDead).toBe(true);
+                expect(cell.isDead).toBeTruthy();
             });
         });
     });
