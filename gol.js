@@ -19,6 +19,9 @@ var Grid = (function () {
                 this.cells[pos.x, pos.y].isDead = false;
             }
         };
+        this.isAlive = function (x, y) {
+            return false;
+        };
     }
     return Grid;
 })();

@@ -70,6 +70,10 @@ describe('Game of Life', () => {
             expect(grid.cells[0]).toEqual(new Cell());
         });
 
+        it('provides information about a position using method isAlive', () => {
+            expect(grid.isAlive(0, 0)).toBeDefined();
+        });
+
         describe('Cell', () => {
             var cell : Cell;
 

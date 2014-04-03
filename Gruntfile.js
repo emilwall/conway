@@ -26,7 +26,7 @@ module.exports = function (grunt) {
 		},
 		watch: {
 			pivotal : {
-				files: ['tests/**/*.ts', './*.ts', '*.js', 'tests/**/*.js'],
+				files: ['tests/**/*.ts', './*.ts'],
 				tasks: ['ts:build', 'jasmine:pivotal']
 			},
 		},

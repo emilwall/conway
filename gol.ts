@@ -16,6 +16,9 @@ class Grid {
       this.cells[pos.x, pos.y].isDead = false;
     }
   };
+  isAlive = function (x, y) {
+    return false;
+  }
 };
 
 class Cell {
