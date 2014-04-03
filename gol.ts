@@ -1,19 +1,23 @@
-﻿/// <reference path="gol.d.ts"/>
+/// <reference path="gol.d.ts"/>
 
 class GOL {
-    grid = new Grid();
-    public tick = function () {
-        this.grid.cells[0].isDead = true;
-    };
+  grid = new Grid();
+  public tick = function () {
+    this.grid.cells[0].isDead = true;
+  };
 };
 
 class Grid {
-    cells = [new Cell()];
-    init = function (alivePositions) {
-        this.cells[0].isDead = false;
-    };
+  cells = [new Cell()];
+  init = function (alivePositions) {
+    for (var i = 0, len = alivePositions.length; i < len; i++) {
+      var pos = alivePositions[i];
+      this.cells[pos.x, pos.y] = new Cell();
+      this.cells[pos.x, pos.y].isDead = false;
+    }
+  };
 };
 
 class Cell {
-    isDead = true;
+  isDead = true;
 };

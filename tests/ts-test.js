@@ -45,9 +45,20 @@ describe('Game of Life', function () {
         });
 
         describe('init', function () {
-            it('creates the specified living cells', function () {
+            it('can create a single specified living cell', function () {
                 grid.init([{ x: 0, y: 0 }]);
+
                 expect(grid.cells[0, 0].isDead).toBeFalsy();
+            });
+
+            it('can create multiple specified living cells', function () {
+                var cellPos1 = { x: 0, y: 0 }, cellPos2 = { x: 1, y: 0 }, cellPos3 = { x: 2, y: 3 };
+
+                grid.init([cellPos1, cellPos2, cellPos3]);
+
+                expect(grid.cells[0, 0].isDead).toBeFalsy();
+                expect(grid.cells[1, 0].isDead).toBeFalsy();
+                expect(grid.cells[2, 3].isDead).toBeFalsy();
             });
         });
 
@@ -68,5 +79,4 @@ describe('Game of Life', function () {
         });
     });
 });
-// TODO Custom matcher: toBeOfType
 //# sourceMappingURL=ts-test.js.map

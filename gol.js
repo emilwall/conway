@@ -1,4 +1,3 @@
-/// <reference path="gol.d.ts"/>
 var GOL = (function () {
     function GOL() {
         this.grid = new Grid();
@@ -14,7 +13,11 @@ var Grid = (function () {
     function Grid() {
         this.cells = [new Cell()];
         this.init = function (alivePositions) {
-            this.cells[0].isDead = false;
+            for (var i = 0, len = alivePositions.length; i < len; i++) {
+                var pos = alivePositions[i];
+                this.cells[pos.x, pos.y] = new Cell();
+                this.cells[pos.x, pos.y].isDead = false;
+            }
         };
     }
     return Grid;
