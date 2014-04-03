@@ -15,12 +15,14 @@ var Grid = (function () {
         this.init = function (alivePositions) {
             for (var i = 0, len = alivePositions.length; i < len; i++) {
                 var pos = alivePositions[i];
-                this.cells[pos.x, pos.y] = new Cell();
-                this.cells[pos.x, pos.y].isDead = false;
+                var key = "x" + pos.x + "y" + pos.y;
+                this.cells[key] = new Cell();
+                this.cells[key].isDead = false;
             }
         };
         this.isAlive = function (x, y) {
-            return false;
+            var cell = this.cells["x" + x + "y" + y];
+            return (typeof cell !== "undefined") && !cell.isDead;
         };
     }
     return Grid;

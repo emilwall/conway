@@ -48,7 +48,7 @@ describe('Game of Life', function () {
             it('can create a single specified living cell', function () {
                 grid.init([{ x: 0, y: 0 }]);
 
-                expect(grid.cells[0, 0].isDead).toBeFalsy();
+                expect(grid.isAlive(0, 0)).toBeTruthy();
             });
 
             it('can create multiple specified living cells', function () {
@@ -56,9 +56,9 @@ describe('Game of Life', function () {
 
                 grid.init([cellPos1, cellPos2, cellPos3]);
 
-                expect(grid.cells[0, 0].isDead).toBeFalsy();
-                expect(grid.cells[1, 0].isDead).toBeFalsy();
-                expect(grid.cells[2, 3].isDead).toBeFalsy();
+                expect(grid.isAlive(0, 0)).toBeTruthy();
+                expect(grid.isAlive(1, 0)).toBeTruthy();
+                expect(grid.isAlive(2, 3)).toBeTruthy();
             });
         });
 
@@ -68,6 +68,18 @@ describe('Game of Life', function () {
 
         it('provides information about a position using method isAlive', function () {
             expect(grid.isAlive(0, 0)).toBeDefined();
+        });
+
+        describe('isAlive', function () {
+            it('returns false if cell at position is dead', function () {
+                expect(grid.isAlive(7, 13)).toBeFalsy();
+            });
+
+            it('returns true if cell at position is alive', function () {
+                grid.init([{ x: 0, y: 0 }]);
+
+                expect(grid.isAlive(0, 0)).toBeTruthy();
+            });
         });
 
         describe('Cell', function () {
