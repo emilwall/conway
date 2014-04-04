@@ -16,7 +16,7 @@ describe('Game of Life', function () {
     });
 
     it('has a grid of cells', function () {
-        expect(gol.grid).toBeDefined();
+        expect(gol._grid).toBeDefined();
     });
 
     it('can evolve one generation', function () {
@@ -25,11 +25,31 @@ describe('Game of Life', function () {
 
     describe('tick method', function () {
         it('kills cells with fewer than two live neighbours', function () {
-            gol.grid.init([{ x: 0, y: 0 }]);
+            gol._grid.init([{ x: 0, y: 0 }]);
 
             gol.tick();
 
-            expect(gol.grid.isAlive(0, 0)).toBeFalsy();
+            expect(gol._grid.isAlive(0, 0)).toBeFalsy();
+        });
+
+        it('kills cells with more than three live neighbours', function () {
+            gol._grid.init([
+                { x: 0, y: 0 }, { x: 0, y: 1 }, { x: 1, y: 0 },
+                { x: 1, y: 1 }, { x: 0, y: -1 }]);
+
+            gol.tick();
+
+            expect(gol._grid.isAlive(0, 0)).toBeFalsy();
+        });
+
+        xit('spawn cells with exactly three live neighbours', function () {
+            gol._grid.init([
+                { x: 0, y: 1 }, { x: 1, y: 0 },
+                { x: 1, y: 1 }]);
+
+            gol.tick();
+
+            expect(gol._grid.isAlive(0, 0)).toBeTruthy();
         });
     });
 
@@ -37,7 +57,7 @@ describe('Game of Life', function () {
         var grid;
 
         beforeEach(function () {
-            grid = gol.grid;
+            grid = gol._grid;
         });
 
         it('has an initialize method called init', function () {

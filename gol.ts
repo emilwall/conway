@@ -1,12 +1,12 @@
 /// <reference path="gol.d.ts"/>
 
 class GOL {
-  grid = new Grid();
+  _grid = new Grid();
   public tick = function () {
     var key;
-    for (key in this.grid.cells) {
+    for (key in this._grid.cells) {
       if (typeof key === "string" && key.charAt(0) === 'x') {
-        this.grid.cells[key].isAlive = false;
+        this._grid.cells[key].isAlive = false;
       }
     }
   };

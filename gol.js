@@ -1,11 +1,11 @@
 var GOL = (function () {
     function GOL() {
-        this.grid = new Grid();
+        this._grid = new Grid();
         this.tick = function () {
             var key;
-            for (key in this.grid.cells) {
+            for (key in this._grid.cells) {
                 if (typeof key === "string" && key.charAt(0) === 'x') {
-                    this.grid.cells[key].isAlive = false;
+                    this._grid.cells[key].isAlive = false;
                 }
             }
         };
