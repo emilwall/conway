@@ -27,11 +27,11 @@ describe('Game of Life', () => {
 
     describe('tick method', () => {
         it('kills cells with fewer than two live neighbours', () => {
-            gol.grid.cells[0].isDead = false;
+            gol.grid.init([{x: 0, y: 0}]);
 
             gol.tick();
 
-            expect(gol.grid.cells[0].isDead).toBeTruthy();
+            expect(gol.grid.isAlive(0, 0)).toBeFalsy();
         });
     });
 
@@ -66,10 +66,6 @@ describe('Game of Life', () => {
             });
         });
 
-        it('has a cell of type Cell', () => {
-            expect(grid.cells[0]).toEqual(new Cell());
-        });
-
         it('provides information about a position using method isAlive', () => {
             expect(grid.isAlive(0, 0)).toBeDefined();
         });
@@ -94,7 +90,7 @@ describe('Game of Life', () => {
             });
 
             it('is dead by default', () => {
-                expect(cell.isDead).toBeTruthy();
+                expect(cell.isAlive).toBeFalsy();
             });
         });
     });

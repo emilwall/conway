@@ -2,7 +2,12 @@ var GOL = (function () {
     function GOL() {
         this.grid = new Grid();
         this.tick = function () {
-            this.grid.cells[0].isDead = true;
+            var key;
+            for (key in this.grid.cells) {
+                if (typeof key === "string" && key.charAt(0) === 'x') {
+                    this.grid.cells[key].isAlive = false;
+                }
+            }
         };
     }
     return GOL;
@@ -11,18 +16,18 @@ var GOL = (function () {
 
 var Grid = (function () {
     function Grid() {
-        this.cells = [new Cell()];
+        this.cells = {};
         this.init = function (alivePositions) {
             for (var i = 0, len = alivePositions.length; i < len; i++) {
                 var pos = alivePositions[i];
                 var key = "x" + pos.x + "y" + pos.y;
                 this.cells[key] = new Cell();
-                this.cells[key].isDead = false;
+                this.cells[key].isAlive = true;
             }
         };
         this.isAlive = function (x, y) {
             var cell = this.cells["x" + x + "y" + y];
-            return (typeof cell !== "undefined") && !cell.isDead;
+            return (typeof cell !== "undefined") && cell.isAlive;
         };
     }
     return Grid;
@@ -31,7 +36,7 @@ var Grid = (function () {
 
 var Cell = (function () {
     function Cell() {
-        this.isDead = true;
+        this.isAlive = false;
     }
     return Cell;
 })();
